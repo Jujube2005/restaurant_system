@@ -1,7 +1,7 @@
 import { type Request, type Response } from "express";
 import { db } from "../utils/db.js";
 
-async function login(req: Request, res: Response) {
+export async function login(req: Request, res: Response) {
     const { username, password } = req.body;
 
     const [rows]: any = await db.query(
