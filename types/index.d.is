@@ -1,0 +1,38 @@
+export interface Employee {
+  employees_id: number;
+  first_name: string;
+  last_name: string;
+  username: string;
+  role: "chef" | "waiter" | "bartender" | "accountant";
+}
+
+export interface EmployeeDB extends Employee {
+  password: string;
+}
+
+export interface Customer {
+  customers_id: number;
+  first_name: string;
+  last_name: string;
+  phone: string;
+  email: string;
+  membership_level: "normal" | "VIP";
+  points?: number;
+}
+
+export interface Restaurant_tables {
+  tables_id: number;
+  table_name: string;
+  seats: number;
+  status: "available" | "occupied" | "unavailable";
+}
+
+export interface Order {
+  orders_id: number;
+  table_number: number;
+  employee_id: number;
+  customer_id?: number;
+  total_price: number;
+  created_at: string;
+  status: "pending" | "served" | "paid" | "cancelled";
+}
